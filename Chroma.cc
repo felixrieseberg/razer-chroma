@@ -84,8 +84,6 @@ NAN_MODULE_INIT(InitAll) {
     Nan::GetFunction(Nan::New<FunctionTemplate>(InitChroma)).ToLocalChecked());
   Nan::Set(target, Nan::New("UnInitChroma").ToLocalChecked(),
     Nan::GetFunction(Nan::New<FunctionTemplate>(UnInitChroma)).ToLocalChecked());
-  Nan::Set(target, Nan::New("SetAll").ToLocalChecked(),
-    Nan::GetFunction(Nan::New<FunctionTemplate>(SetAll)).ToLocalChecked());
 
   NodeKeyboard::Init(target, &SDKInstance);
 }

@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "configure": "node-gyp configure",
-    "build": "node-gyp build"
+    "build": "node-gyp build",
+    "install": "npm run configure && npm run build"
   },
   "repository": "https://github.com/felixrieseberg/razer-chroma",
   "os": [
