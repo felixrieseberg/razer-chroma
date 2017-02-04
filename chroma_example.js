@@ -2,6 +2,9 @@ var Chroma = require('./');
 var init = Chroma.InitChroma();
 
 
+console.log(Chroma);
+//return;
+
 var current_col=0;
 var grow=true;
 var interval;
@@ -54,9 +57,10 @@ if(init){
 
 	setTimeout(function(){
 		clearInterval(interval);
-		console.log(Chroma.UnInitChroma());
+		console.log(Chroma.Keyboard.Delete());
 		console.log("Closing");
-	},30000);
+		setTimeout(() => console.log('hiiii'), 2000)
+	},2000);
 }
 else console.log("Couldn't initalize SDK");
 

@@ -7,7 +7,7 @@ using v8::FunctionTemplate;
 
 SDK SDKInstance;
 
-NAN_METHOD(InitChroma) {
+NAN_METHOD(Initialize) {
     if (SDKInstance.m_ChromaSDKModule == NULL) {
         SDKInstance.m_ChromaSDKModule = LoadLibrary("RzChromaSDK64.dll");
         if (SDKInstance.m_ChromaSDKModule == NULL)
@@ -57,7 +57,7 @@ NAN_METHOD(InitChroma) {
     info.GetReturnValue().Set(false);
 }
 
-NAN_METHOD(UnInitChroma) {
+NAN_METHOD(Terminate) {
     if (SDKInstance.m_ChromaSDKModule != NULL)
     {
         RZRESULT Result = RZRESULT_INVALID;
@@ -80,10 +80,10 @@ NAN_METHOD(UnInitChroma) {
 NAN_MODULE_INIT(InitAll) {
   SDKInstance = SDK();
 
-  Nan::Set(target, Nan::New("InitChroma").ToLocalChecked(),
-    Nan::GetFunction(Nan::New<FunctionTemplate>(InitChroma)).ToLocalChecked());
-  Nan::Set(target, Nan::New("UnInitChroma").ToLocalChecked(),
-    Nan::GetFunction(Nan::New<FunctionTemplate>(UnInitChroma)).ToLocalChecked());
+  Nan::Set(target, Nan::New("initialize").ToLocalChecked(),
+    Nan::GetFunction(Nan::New<FunctionTemplate>(Initialize)).ToLocalChecked());
+  Nan::Set(target, Nan::New("terminate").ToLocalChecked(),
+    Nan::GetFunction(Nan::New<FunctionTemplate>(Terminate)).ToLocalChecked());
 
   NodeKeyboard::Init(target, &SDKInstance);
 }
