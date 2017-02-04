@@ -16,7 +16,7 @@ NAN_METHOD(Initialize) {
         }
     }
 
-    if (SDKInstance.Init == NULL && SDKInstance.m_ChromaSDKModule!=NULL) {
+    if (SDKInstance.m_ChromaSDKModule!=NULL) {
         RZRESULT Result = RZRESULT_INVALID;
         SDKInstance.Init = (INIT)GetProcAddress(SDKInstance.m_ChromaSDKModule, "Init");
 
