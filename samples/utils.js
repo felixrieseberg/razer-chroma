@@ -1,5 +1,5 @@
 module.exports = {
-  pressKeyToExit(chroma) {
+  pressKeyToExit (chroma) {
     console.log('\nPress any key to exit\n')
 
     process.stdin.setRawMode(true)
@@ -7,10 +7,10 @@ module.exports = {
     process.stdin.on('data', () => {
       chroma.terminate()
       process.exit(0)
-    });
+    })
   },
 
-  exitIn(chroma, timeout) {
+  exitIn (chroma, timeout) {
     timeout = timeout || 5000
 
     console.log(`\nExiting in ${timeout / 1000}s! \n`)

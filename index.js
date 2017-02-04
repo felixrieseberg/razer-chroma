@@ -1,4 +1,4 @@
-const native = require('bindings')('Chroma');
+const native = require('bindings')('Chroma')
 
 /**
  * Ensures that a color object is sound.
@@ -11,7 +11,7 @@ const native = require('bindings')('Chroma');
  * @param {number} green
  * @param {number} blue
  */
-function checkColor(color) {
+function checkColor (color) {
   color = color || {}
 
   if (color.red > 255 || color.red < 0) {
@@ -36,7 +36,7 @@ module.exports = {
    * @return {boolean} success - Whether or not the SDK was initialized.
    * False means usually that there's no Chroma device.
    */
-  initialize() {
+  initialize () {
     return native.initialize()
   },
 
@@ -46,7 +46,7 @@ module.exports = {
    * @return {boolean} success - Whether or not the SDK was initialized.
    * False means usually that it wasn't initialized.
    */
-  terminate() {
+  terminate () {
     return native.terminate()
   },
 
@@ -58,7 +58,7 @@ module.exports = {
      *
      * @returns {void}
      */
-    setWave(direction) {
+    setWave (direction) {
       return native.Keyboard.setWave(direction || 'leftToRight')
     },
 
@@ -74,7 +74,7 @@ module.exports = {
      *
      * @returns {void}
      */
-    setStatic(color) {
+    setStatic (color) {
       color = checkColor(color)
 
       return native.Keyboard.setStatic(color)
@@ -94,7 +94,7 @@ module.exports = {
      *
      * @returns {void}
      */
-    setCustom(customArray) {
+    setCustom (customArray) {
       if (!customArray) {
         throw new Error('setCustom must be called with an array as parameter.')
       }
@@ -109,7 +109,7 @@ module.exports = {
      * @param {color} colorTwo - A color object
      * @returns {void}
      */
-    setBreathing(colorOne, colorTwo) {
+    setBreathing (colorOne, colorTwo) {
       colorOne = checkColor(colorOne)
       colorTwo = checkColor(colorTwo)
 
@@ -121,7 +121,7 @@ module.exports = {
      *
      * @returns {void}
      */
-    setBreathingRandom(colorOne, colorTwo) {
+    setBreathingRandom (colorOne, colorTwo) {
       return native.Keyboard.setBreathingRandom()
     },
 
@@ -130,7 +130,7 @@ module.exports = {
      *
      * @returns {void}
      */
-    setSpectrumCycling() {
+    setSpectrumCycling () {
       return native.Keyboard.setSpectrumCycling()
     },
 
@@ -141,7 +141,7 @@ module.exports = {
      * @param {color} colorTwo - A color object
      * @returns {void}
      */
-    setStarlight(colorOne, colorTwo) {
+    setStarlight (colorOne, colorTwo) {
       colorOne = checkColor(colorOne)
       colorTwo = checkColor(colorTwo)
       return native.Keyboard.setStarlight(colorOne, colorTwo)
@@ -159,10 +159,10 @@ module.exports = {
      *
      * @returns {void}
      */
-    setReactive(color) {
+    setReactive (color) {
       color = checkColor(color)
 
       return native.Keyboard.setReactive(color)
-    },
+    }
   }
-};
+}

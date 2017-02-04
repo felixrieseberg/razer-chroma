@@ -6,8 +6,10 @@
   "scripts": {
     "configure": "node-gyp configure",
     "build": "node-gyp build",
-    "install": "npm run configure && npm run build"
+    "install": "npm run configure && npm run build",
+    "test": "standard \"**/*.js\""
   },
+  "license": "MIT",
   "repository": "https://github.com/felixrieseberg/razer-chroma",
   "os": [
     "win32"
@@ -17,6 +19,7 @@
   },
   "devDependencies": {
     "nan": "^2.5.1",
-    "node-gyp": "^3.5.0"
+    "node-gyp": "^3.5.0",
+    "standard": "^8.6.0"
   }
 }
