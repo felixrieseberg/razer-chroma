@@ -6,7 +6,6 @@
   "scripts": {
     "configure": "node-gyp configure",
     "build": "node-gyp build",
-    "postinstall": "npm run configure && npm run build",
     "test": "standard \"**/*.js\""
   },
   "license": "MIT",
