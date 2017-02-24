@@ -33,6 +33,7 @@ if (chroma.initialize()) {
   // Later
   chroma.terminate()
 }
+```
 
 ## License
 MIT, please see `LICENSE.md` for details.
