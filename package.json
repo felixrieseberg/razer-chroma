@@ -2,7 +2,7 @@
   "name": "razer-chroma",
   "description": "Chroma for Node",
   "version": "0.2.3",
-  "main": "index.js",
+  "main": "boot.js",
   "scripts": {
     "configure": "node-gyp configure",
     "build": "node-gyp build",

@@ -1,4 +1,4 @@
-const chroma = require('../index')
+const chroma = require('../boot')
 const utils = require('./utils')
 
 const initialize = chroma.initialize()
